@@ -1,2 +1,7 @@
 mldemo/
 .mldemo
+build/
+dist/
+housing_predictor.egg-info/
+venv/
+.venv
