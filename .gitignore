@@ -5,3 +5,8 @@ dist/
 housing_predictor.egg-info/
 venv/
 .venv
+/__pycache__/    
+housing_logs/
+housing/__pycache__/
+*__pycache__ 
+
