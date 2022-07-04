@@ -32,6 +32,10 @@ DATA_INGESTION_TEST_DIR_KEY = "ingested_test_dir"
 DATA_VALIDATION_CONFIG_KEY = "data_validation_config"
 DATA_VALIDATAION_ARTIFACT_DIR = "data_validataion"
 DATA_VALIDATION_FILE_NAME_KEY = "schema_file_name"
+DATA_VALIDATION_SCHEMA_DIR_KEY = "schema_dir"
+DATA_VALIDATION_REPORT_FILE_NAME_KEY = "report_file_path"
+DATA_VALIDATION_REPORT_PAGE_FILE_NAME_KEY = "report_page_file_path"
+
 
 #Data Transforamtion related varliables
 DATA_TRANSFORMATION_CONFIG_KEY = "data_transformation_config"

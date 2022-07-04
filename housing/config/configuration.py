@@ -71,6 +71,7 @@ class Configuration:
 
         try:
             artifact_dir = self.training_pipeline_config.artifact_dir
+
             data_validataion_artifact_dir = os.path.join(
                 artifact_dir,
                 DATA_VALIDATAION_ARTIFACT_DIR
@@ -79,11 +80,25 @@ class Configuration:
             data_valiation_info = self.config_info[DATA_VALIDATION_CONFIG_KEY]
 
             schema_file_path = os.path.join(
-                artifact_dir, 
+                ROOT_DIR,
+                data_valiation_info[DATA_VALIDATION_SCHEMA_DIR_KEY], 
                 data_valiation_info[DATA_VALIDATION_FILE_NAME_KEY]
             )
 
-            data_validation_config = DataValidationConfig(schema_file_path=schema_file_path)
+            report_file_path = os.path.join(data_validataion_artifact_dir,
+                                            data_valiation_info[DATA_VALIDATION_REPORT_FILE_NAME_KEY]
+                                            )
+
+            report_page_file_path = os.path.join(
+                data_validataion_artifact_dir, 
+                data_valiation_info[DATA_VALIDATION_REPORT_PAGE_FILE_NAME_KEY]
+            )
+
+            data_validation_config = DataValidationConfig\
+                                    (schema_file_path=schema_file_path,
+                                    report_file_path=report_file_path,
+                                    report_page_file_path=report_page_file_path
+                                    )
 
             logging.info(f"Data validation config: {data_validation_config}")
             return data_validation_config
@@ -169,8 +184,8 @@ class Configuration:
 
     def get_training_pipeline_config(self) -> TrainingPipelineConfig:
         try:
-            print(TRAINING_PIPELINE_CONFIG_KEY)
-            print(self.config_info)
+            #print(TRAINING_PIPELINE_CONFIG_KEY)
+            #print(self.config_info)
             
             training_pipeline_config = self.config_info[TRAINING_PIPELINE_CONFIG_KEY]
             artifact_dir = os.path.join(ROOT_DIR,
