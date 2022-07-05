@@ -12,12 +12,14 @@ def get_requirements_list() -> List[str]:
     rq_packages = []
 
     with open(REQUIREMENT_FILE_NAME) as requirement_file:
-        rq_packages = requirement_file.readlines().remove("-e .")
+        rq_packages = requirement_file.readlines()
+        rq_packages.remove("-e .")
+        print(rq_packages)
     return rq_packages
 
 
 PROJECT_NAME = 'housing-predictor'
-VERSION ="0.0.2"
+VERSION ="0.0.3"
 AUTHOR ="Mohamed Naji Aboo"
 DESCRIPTION = " This is the first FSDS batch project"
 PACKAGES = ['housing']

@@ -74,7 +74,8 @@ class Configuration:
 
             data_validataion_artifact_dir = os.path.join(
                 artifact_dir,
-                DATA_VALIDATAION_ARTIFACT_DIR
+                DATA_VALIDATAION_ARTIFACT_DIR,
+                self.time_stamp
             )
 
             data_valiation_info = self.config_info[DATA_VALIDATION_CONFIG_KEY]
