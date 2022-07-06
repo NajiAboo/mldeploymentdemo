@@ -60,3 +60,16 @@ MODEL_EVALUATIN_FILE_NAME_KEY = "model_evaluation_file_name"
 #Model pusher config
 MODEL_PUSHER_CONFIG_KEY = "model_pusher_config"
 MODEL_EXPORT_DIR = "saved_models"
+
+
+COLUMN_TOTAL_ROOMS = "total_rooms"
+COLUMN_POPULATION = "population"
+COLUMN_HOUSEHOLDS = "households"
+COLUMN_TOTAL_BEDROOM = "total_bedrooms"
+DATASET_SCHEMA_COLUMNS_KEY=  "columns"
+
+NUMERICAL_COLUMN_KEY="numerical_columns"
+CATEGORICAL_COLUMN_KEY = "categorical_columns"
+
+
+TARGET_COLUMN_KEY="target_column"

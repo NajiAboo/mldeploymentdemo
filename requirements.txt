@@ -5,4 +5,5 @@ numpy
 pandas
 PyYAML==5.1
 evidently
+dill
 -e .

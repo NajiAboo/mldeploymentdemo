@@ -117,13 +117,18 @@ class Configuration:
                 data_transformation_info[DATA_TRANSFORMED_DIR_KEY],
                 self.time_stamp
                 )
-            transformed_train_dir = os.path.join(transformed_dir, data_transformation_info[DATA_TRANSFORMED_TRAIN_DIR_KEY])
-            transformed_test_dir =  os.path.join(transformed_dir, data_transformation_info[DATA_TRANSFORMED_TEST_DIR_KEY])
-            preprocessing_dir = os.path.join(transformed_dir, data_transformation_info[DATA_PREPROCESSING_DIR_KEY])
-            preprocessed_object_file_path = os.path.join(preprocessing_dir, data_transformation_config[DATA_PREPROCESSED_OBJECT_FILE_NAME_KEY])
-            add_bedroom_per_room = data_transformation_config[ADD_BEDROOM_PER_ROOM_KEY]
 
-            data_transformation_config = DataTransformationConfig(\
+            preprocessing_dir = os.path.join(transformed_dir, data_transformation_info[DATA_PREPROCESSING_DIR_KEY])
+
+            transformed_train_dir = os.path.join(preprocessing_dir, data_transformation_info[DATA_TRANSFORMED_TRAIN_DIR_KEY])
+            transformed_test_dir =  os.path.join(preprocessing_dir, data_transformation_info[DATA_TRANSFORMED_TEST_DIR_KEY])
+            
+            preprocessed_object_file_path = os.path.join(transformed_dir, 
+                            data_transformation_info[DATA_TRANSFORMED_DIR_KEY],
+                            data_transformation_info[DATA_PREPROCESSED_OBJECT_FILE_NAME_KEY])
+            add_bedroom_per_room = data_transformation_info[ADD_BEDROOM_PER_ROOM_KEY]
+
+            data_transformation_config = DataTransformationConfig(
                 add_bedroom_per_room= add_bedroom_per_room,
                 transformed_dir = transformed_dir,
                 transformed_train_dir=transformed_train_dir,
